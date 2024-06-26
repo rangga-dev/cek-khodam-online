@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Kodam Online</title>      
+    <!-- Poppins fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style type="text/css" media="all">
+      :root {
+        --text: #C5C6C7;
+        --primary: #111;
+        --bg: #0B0C10;
+        --shadow: #66FCF1;
+      }
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+      }
+      body {
+        background-color: var(--primary);
+        font-family: poppins;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: var(--text);
+        
+      }
+      .container {
+        background-color: var(--bg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0rem;
+        border-radius: 1rem;
+        padding: 0rem 1rem;
+        box-shadow: 0 0 10px 0px var(--shadow);
+      }
+      .container h1 {
+        margin: 1rem 0rem;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .container p {
+        font-weight: 200;
+        margin: 0;
+        font-size: .9rem;
+      }
+      .container form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: .5rem 1rem 1rem 1rem;
+        margin: 0;
+      }
+      #nama {
+        width: 100%;
+        box-shadow: 0 0 5px 0px var(--shadow);
+        padding: .5rem 1rem;
+        font-family: poppins;
+        margin: 0;
+        border-radius: 5px;
+        ba
+      }
+      #btn,#text {
+        box-shadow: 0 0 5px 0px var(--shadow);
+        font-size: 1rem;
+        background-color: var(--shadow);
+        padding: .5rem 1rem;
+        border: 1px solid var(--shadow);
+        color: var(--bg);
+        font-family: poppins;
+        border-radius: 8px;
+      }
+      #text {
+        text-align: center;
+        font-weight: 700;
+      }
+      #result {
+        padding: 3rem 1rem 4rem 1rem;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="input" class="container animate__animated animate__fadeIn animate__fast">
+      <h1 class="animate__animated animate__bounceIn animate__delay-1s">Cek Khodam Online</h1>
+      <p class="animate__animated animate__fadeInUp animate__delay-2s">Masukkan nama untuk mengetahui khodam anda</p>
+      <form action="" method="get" accept-charset="utf-8">
+        <input class="animate__animated animate__fadeIn animate__delay-2s" type="text" name="nama" id="nama" value="" placeholder="Masukkan Nama Anda" required/> <br />
+        <input class="animate__animated animate__fadeInUp animate__delay-3s" type="button" name="btn" id="btn" value="Cek Khodam" onclick="generateKhodam()"/>
+      </form>
+    </div>
+    <div id="result" class="container animate__animated animate__fadeIn animate__fast">
+      <h1 class="animate__animated animate__bounceIn animate__delay-1s">Khodam Anda Adalah</h1>
+      <input class="animate__animated animate__fadeInUp animate__delay-2s" type="text" id="text" value="Cek Khodam" disabled/>
+      </form>
+    </div>
+   
+   <!-- js -->
+    <script type="text/javascript" charset="utf-8">
+        function generateKhodam() {
+          const nama = document.getElementById("nama")
+          console.log(nama.placeholder)
+          const result = document.getElementById("result")
+          const input = document.getElementById("input")
+          const text = document.getElementById("text")
+          const data = [
+            "KOSONG",
+            "KAMBING AMAZON",
+            "CEKER BABAT",
+            "KUNTILANAK BONDOL",
+            "BIAWAK",
+            "ULAR TANGGA"]
+          
+          let item = data[Math.floor(Math.random()*data.length)];
+          
+          
+            result.style.display = "block"
+            input.style.display = "none"
+            text.value = item
+          
+        }
+          console.log(nama)
+      </script>
+  </body>
+</html>
